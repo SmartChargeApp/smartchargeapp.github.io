@@ -15,23 +15,25 @@ Public site of SmartCharge: <https://smartchargeapp.github.io/>
 
 ## Where the pages come from
 
-The pages are generated, not edited here. Their source is `buca1821/SmartCharge`,
-`docs/producto/la-idea-de-smartcharge.html` and its `.ca.html` and `.en.html`
-versions, which are artifact fragments (no doctype, no `<html>`, no viewport).
-`build-site.py` turns them into the full documents served here: doctype,
-`html lang`, viewport, title, description, social tags and the language links
-pointing at `/`, `/ca/` and `/en/`.
+The pages are generated from the idea-page fragments in `buca1821/SmartCharge`
+(`docs/producto/la-idea-de-smartcharge.html` and its `.ca.html` and `.en.html`
+versions) by `scripts/build-site.py` in that repository. The generator lives
+there and not here, so the code that runs with the deploy key is reviewed in
+SmartCharge.
 
-To regenerate after the source pages change, from a checkout of
-`buca1821/SmartCharge` (private):
+The workflow `.github/workflows/publish-site.yml` in `buca1821/SmartCharge`
+regenerates and commits these pages when `main` changes something under
+`docs/producto/`. It pushes here with a write deploy key scoped to this
+repository; a regeneration that changes nothing does not commit. Its output is
+noindex on purpose.
 
-    python3 /path/to/smartchargeapp.github.io/build-site.py docs/producto /path/to/smartchargeapp.github.io
+Do not edit the HTML here: the next publication overwrites it. To regenerate by
+hand from a SmartCharge checkout:
 
-Then commit the three generated `index.html` files. The two icons are generated
-once from the app icon and do not change with the page.
+    python3 scripts/build-site.py docs/producto /path/to/smartchargeapp.github.io
 
-The pages carry `noindex, nofollow`. Remove that tag in `build-site.py` if the
-site should appear in search engines.
+The two icons are generated once from the app icon and do not change with the
+page.
 
 ## Checks after a change
 
