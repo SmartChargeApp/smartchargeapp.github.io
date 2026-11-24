@@ -8,6 +8,11 @@ Public site of SmartCharge: <https://smartchargeapp.github.io/>
   SmartCharge is for the user, in Spanish, Catalan and English. The site root is
   the Spanish page; the other two live under `/ca/` and `/en/`.
 - `favicon.png`, `apple-touch-icon.png`: the app icon.
+- `media/`: the short film of the idea page, wide (16:9) and tall (4:5, reframed for the phone), in
+  Spanish, Catalan and English (`corto-<lang>.mp4`, `corto-<lang>-vertical.mp4`),
+  with one poster per shape. Only the end card differs between languages. The
+  page shows the wide one above 40rem and the tall one below, and fetches the
+  video only on play.
 - `.nojekyll`: serves `.well-known/` and the generated pages as they are.
 - `.well-known/appspecific/com.tesla.3p.public-key.pem`: the public key Tesla
   reads when a car is paired with the app. **Do not move, edit or rename it**:
@@ -33,7 +38,8 @@ hand from a SmartCharge checkout:
     python3 scripts/build-site.py docs/producto /path/to/smartchargeapp.github.io
 
 The two icons are generated once from the app icon and do not change with the
-page.
+page. The files under `media/` are committed here by hand for the same reason:
+`build-site.py` writes only the three pages, so the workflow never touches them.
 
 ## Checks after a change
 
