@@ -12,7 +12,9 @@ Public site of SmartCharge: <https://smartchargeapp.github.io/>
   Spanish, Catalan and English (`corto-<lang>.mp4`, `corto-<lang>-vertical.mp4`),
   with one poster per shape. Only the end card differs between languages. The
   page shows the wide one above 40rem and the tall one below, and fetches the
-  video only on play.
+  video only on play. Also the silent loops of two cards (`loop-<name>.mp4`, with
+  a poster each), the same in every language, fetched only when the card is on
+  screen.
 - `.nojekyll`: serves `.well-known/` and the generated pages as they are.
 - `.well-known/appspecific/com.tesla.3p.public-key.pem`: the public key Tesla
   reads when a car is paired with the app. **Do not move, edit or rename it**:
