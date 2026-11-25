@@ -8,13 +8,14 @@ Public site of SmartCharge: <https://smartchargeapp.github.io/>
   SmartCharge is for the user, in Spanish, Catalan and English. The site root is
   the Spanish page; the other two live under `/ca/` and `/en/`.
 - `favicon.png`, `apple-touch-icon.png`: the app icon.
-- `media/`: the short film of the idea page, wide (16:9) and tall (4:5, reframed for the phone), in
-  Spanish, Catalan and English (`corto-<lang>.mp4`, `corto-<lang>-vertical.mp4`),
-  with one poster per shape. Only the end card differs between languages. The
-  page shows the wide one above 40rem and the tall one below, and fetches the
-  video only on play. Also the silent loops of two cards (`loop-<name>.mp4`, with
-  a poster each), the same in every language, fetched only when the card is on
-  screen.
+- `media/`: the short film of the idea page, wide (16:9) and tall (4:5, reframed
+  for the phone), in Spanish, Catalan and English (`corto-<lang>.mp4`,
+  `corto-<lang>-vertical.mp4`), with one poster per shape. Only the end card
+  differs between languages. The page's player picks the tall one when the
+  screen is taller than wide, and fetches the video only on play. Also a
+  5-second silent preview of the short for the header (`corto-avance.mp4`) and
+  the silent loops of the page's images (`loop-<name>.mp4`), each with a poster,
+  the same in every language and fetched only while they are on screen.
 - `.nojekyll`: serves `.well-known/` and the generated pages as they are.
 - `.well-known/appspecific/com.tesla.3p.public-key.pem`: the public key Tesla
   reads when a car is paired with the app. **Do not move, edit or rename it**:
