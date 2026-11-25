@@ -16,6 +16,9 @@ Public site of SmartCharge: <https://smartchargeapp.github.io/>
   5-second silent preview of the short for the header (`corto-avance.mp4`) and
   the silent loops of the page's images (`loop-<name>.mp4`), each with a poster,
   the same in every language and fetched only while they are on screen.
+- `og/`: the 1200x630 image a shared link shows, one per language (`es.jpg`,
+  `ca.jpg`, `en.jpg`): the short's night, charging, with the page's headline.
+  It carries the headline, so a new headline needs a new image.
 - `.nojekyll`: serves `.well-known/` and the generated pages as they are.
 - `.well-known/appspecific/com.tesla.3p.public-key.pem`: the public key Tesla
   reads when a car is paired with the app. **Do not move, edit or rename it**:
