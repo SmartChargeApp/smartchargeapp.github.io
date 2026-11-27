@@ -19,6 +19,12 @@ Public site of SmartCharge: <https://smartchargeapp.github.io/>
 - `og/`: the 1200x630 image a shared link shows, one per language (`es.jpg`,
   `ca.jpg`, `en.jpg`): the short's night, charging, with the page's headline.
   It carries the headline, so a new headline needs a new image.
+- `fonts/`: the page's three typefaces (Space Grotesk, IBM Plex Sans and IBM
+  Plex Mono), latin subset, and `fonts.css` with their `@font-face` rules. They
+  are served from here so that no visitor's browser asks Google Fonts for them,
+  which would give Google the visitor's IP address. The fragments in SmartCharge
+  keep the Google Fonts link for their previews; `build-site.py` swaps it for
+  `/fonts/fonts.css`. SIL Open Font License 1.1, in the two `OFL-*.txt` files.
 - `.nojekyll`: serves `.well-known/` and the generated pages as they are.
 - `.well-known/appspecific/com.tesla.3p.public-key.pem`: the public key Tesla
   reads when a car is paired with the app. **Do not move, edit or rename it**:
