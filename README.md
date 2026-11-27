@@ -8,6 +8,17 @@ Public site of SmartCharge: <https://smartchargeapp.github.io/>
   SmartCharge is for the user, in Spanish, Catalan and English. The site root is
   the Spanish page; the other two live under `/ca/` and `/en/`.
 - `favicon.png`, `apple-touch-icon.png`: the app icon.
+- `media/`: the short film of the idea page, wide (16:9) and tall (4:5, reframed
+  for the phone), in Spanish, Catalan and English (`corto-<lang>.mp4`,
+  `corto-<lang>-vertical.mp4`). Only the end card differs between languages.
+  The page's player picks the tall one when the screen is taller than wide, and
+  fetches the video only on play. Also a 5-second silent preview of the short
+  for the header (`corto-avance.mp4`) and the silent loops of the page's images
+  (`loop-<name>.mp4`), each with a poster, the same in every language and
+  fetched only while they are on screen.
+- `og/`: the 1200x630 image a shared link shows, one per language (`es.jpg`,
+  `ca.jpg`, `en.jpg`): the short's night, charging, with the page's headline.
+  It carries the headline, so a new headline needs a new image.
 - `.nojekyll`: serves `.well-known/` and the generated pages as they are.
 - `.well-known/appspecific/com.tesla.3p.public-key.pem`: the public key Tesla
   reads when a car is paired with the app. **Do not move, edit or rename it**:
@@ -33,7 +44,8 @@ hand from a SmartCharge checkout:
     python3 scripts/build-site.py docs/producto /path/to/smartchargeapp.github.io
 
 The two icons are generated once from the app icon and do not change with the
-page.
+page. The files under `media/` are committed here by hand for the same reason:
+`build-site.py` writes only the three pages, so the workflow never touches them.
 
 ## Checks after a change
 
